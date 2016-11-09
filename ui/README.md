@@ -1,3 +1,34 @@
+# NOTE: This is a fork.  Original README starts below the next header
+
+First run the following with this folder as CWD
+
+```
+mvn -DdownloadSources=true -DdownloadJavadocs=true -DoutputDirectory=target/eclipse-classes -Declipse.workspace=[path] eclipse:eclipse eclipse:configure-workspace
+```
+
+...where [path] is also the fully qualified path to CWD.
+
+This will take a looooong time to run.  There may be an error reported at the end too but it seems to be benign.
+
+Next install the ui
+
+```
+cd ui
+npm install
+gulp bundle
+```
+
+The run/debug the plugin, use 
+
+```
+mvn hpi:run -Djetty.port=8090
+```
+
+This will start up jenkins via jetty.
+Get to it via http://localhost:8090/jenkins
+
+-------
+
 # Pipeline Stage View
 
 This plugin provides Jenkins UI Pipeline "Visualizations":
